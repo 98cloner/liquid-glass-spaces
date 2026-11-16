@@ -1,0 +1,76 @@
+{
+  "name": "@robinwongm/liquid-glass",
+  "version": "0.1.0",
+  "description": "Faithful Liquid Glass w/ WebGPU and HTML-in-Canvas.",
+  "keywords": [
+    "react",
+    "webgpu",
+    "html-in-canvas",
+    "liquid-glass",
+    "glass",
+    "ui",
+    "components"
+  ],
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Robin Wong",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinWongM/liquid-glass.git"
+  },
+  "homepage": "https://github.com/robinWongM/liquid-glass#readme",
+  "bugs": {
+    "url": "https://github.com/robinWongM/liquid-glass/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "build:site": "vite build --mode site",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19",
+    "@types/react": ">=19"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.9.0",
+    "@floating-ui/react": "^0.27.20",
+    "@webgpu/types": "^0.1.60"
+  },
+  "devDependencies": {
+    "@material-symbols/svg-400": "0.49.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

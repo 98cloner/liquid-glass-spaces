@@ -1,0 +1,54 @@
+@layer liquid-glass {
+  [data-lg-ring]:not([data-lg-ring='inside']):is(:focus-visible, :has(:focus-visible))::after {
+    content: '';
+    position: absolute;
+    inset: calc(0px - var(--lg-ring-top, 0px)) calc(0px - var(--lg-ring-right, 0px)) calc(0px - var(--lg-ring-bottom, 0px)) calc(0px - var(--lg-ring-left, 0px));
+    border-radius: var(--lg-corner, 0.6px);
+    box-shadow: 0 0 0 calc(5px / 3) var(--lg-focus-ring, rgb(0 136 255)), inset 0 0 0 calc(4px / 3) var(--lg-focus-ring, rgb(0 136 255));
+    pointer-events: none;
+  }
+  [data-lg-ring='within']:not([data-lg-ring='inside']):is(:focus-visible, :has(:focus-visible))::after {
+    box-shadow: inset 0 0 0 calc(5px / 3) var(--lg-focus-ring, rgb(0 136 255));
+  }
+  [data-lg-ring='clipped']:not([data-lg-ring='inside']):is(:focus-visible, :has(:focus-visible))::after {
+    clip-path: inset(var(--lg-ring-top, 0px) var(--lg-ring-right, 0px) var(--lg-ring-bottom, 0px) var(--lg-ring-left, 0px));
+  }
+  [data-lg-ring]:focus-visible,
+  [data-lg-ring] :focus-visible {
+    outline: none;
+  }
+  [data-lg-ring='inside']:focus-visible {
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 3px var(--lg-focus-ring, rgb(0 136 255));
+  }
+
+  [data-menu-row]:focus-visible,
+  [data-lg-popup]:focus-visible {
+    outline: none;
+  }
+
+  .lg-search-input,
+  [data-lg-alert-input] {
+    border: 0;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    margin: 0;
+  }
+  .lg-search-input {
+    padding: 0;
+  }
+  .lg-search-input::placeholder {
+    color: var(--lg-secondary-label);
+    opacity: 1;
+  }
+  .lg-search-input::-webkit-search-cancel-button,
+  .lg-search-input::-webkit-search-decoration {
+    appearance: none;
+    display: none;
+  }
+  [data-lg-alert-input]::placeholder {
+    color: var(--lg-alert-placeholder);
+    opacity: 1;
+  }
+}

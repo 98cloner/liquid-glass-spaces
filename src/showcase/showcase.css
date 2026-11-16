@@ -1,0 +1,57 @@
+html, body, #root { margin: 0; height: 100%; overflow: hidden; background: #000; }
+body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; -webkit-font-smoothing: antialiased; }
+.stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #e5e5ea; }
+.stage.dark { background: #2c2c2e; }
+.device { position: relative; flex: none; padding: 14px; border-radius: 69px; background: #000; box-shadow: 0 0 0 2px #8e8e93, 0 0 0 3.5px #48484a, 0 24px 60px rgba(0, 0, 0, .35); }
+.display { width: 402px; height: 874px; --c: radial-gradient(circle, #000 54.5px, transparent 55px);
+  -webkit-mask: var(--c) 0 0 / 110px 110px no-repeat, var(--c) 100% 0 / 110px 110px no-repeat, var(--c) 0 100% / 110px 110px no-repeat, var(--c) 100% 100% / 110px 110px no-repeat,
+    linear-gradient(#000, #000) center / 100% calc(100% - 110px) no-repeat, linear-gradient(#000, #000) center / calc(100% - 110px) 100% no-repeat;
+  mask: var(--c) 0 0 / 110px 110px no-repeat, var(--c) 100% 0 / 110px 110px no-repeat, var(--c) 0 100% / 110px 110px no-repeat, var(--c) 100% 100% / 110px 110px no-repeat,
+    linear-gradient(#000, #000) center / 100% calc(100% - 110px) no-repeat, linear-gradient(#000, #000) center / calc(100% - 110px) 100% no-repeat; }
+.record { position: fixed; right: 20px; bottom: 20px; padding: 8px 14px; border: 0; border-radius: 18px; background: rgba(0, 0, 0, .08); color: #000;
+  font: 500 14px -apple-system, BlinkMacSystemFont, sans-serif; cursor: pointer; }
+.record::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #ff3b30; vertical-align: 1px; }
+.record.on { background: #ff3b30; color: #fff; }
+.record.on::before { background: #fff; border-radius: 1px; }
+.stage.dark .record:not(.on) { background: rgba(255, 255, 255, .12); color: #fff; }
+.island { position: absolute; top: 25px; left: 50%; width: 126px; height: 37px; margin-left: -63px; border-radius: 19px; background: #000; pointer-events: none; }
+
+.screen { background: #fff; --label: #000; --secondary: rgba(60, 60, 67, .6); --separator: rgba(60, 60, 67, .12); }
+.screen.dark { background: #000; --label: #fff; --secondary: rgba(235, 235, 245, .6); --separator: rgba(84, 84, 88, .5); }
+.page { position: relative; color: var(--label); padding-bottom: 112px; }
+.text { font-size: 17px; line-height: 20.333px; }
+.small { font-size: 13px; line-height: 15.667px; }
+.secondary { color: var(--secondary); }
+.photo { position: relative; overflow: hidden; flex: none; }
+.photo img { position: absolute; }
+
+.filter { padding: 4px 28px 20px; }
+.grid { display: grid; grid-template-columns: 165px 165px; column-gap: 16px; row-gap: 24px; padding: 0 28px; }
+.cell { position: relative; }
+.cell .tile { cursor: pointer; margin-bottom: 8px; }
+.cell .text { font-size: 15px; line-height: 18px; }
+.unsave { position: absolute; top: 10px; right: 10px; display: flex; color: #fff; }
+.empty { padding: 120px 28px 0; text-align: center; }
+
+.product .section { padding: 0 28px; }
+.product .section + .section { margin-top: 28px; }
+.heading { display: flex; justify-content: space-between; align-items: baseline; margin-top: 20px; font-size: 22px; line-height: 26.333px; font-weight: 600; }
+.blurb { margin: 11px 0 -1px; font-size: 15px; line-height: 20px; }
+.controls { display: flex; flex-direction: column; gap: 16px; }
+.row { display: flex; justify-content: space-between; align-items: center; min-height: 28px; }
+.header { font-size: 17px; line-height: 20.333px; font-weight: 600; margin-bottom: 4px; }
+.spec { position: relative; display: flex; justify-content: space-between; align-items: center; height: 44px; }
+.spec::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; transform: scaleY(.33333); transform-origin: bottom; background: var(--separator); }
+.spec .text, .spec .secondary { font-size: 15px; line-height: 18px; }
+p.small { line-height: 18px; }
+
+.line { display: flex; align-items: center; gap: 14px; padding: 10px 28px; }
+.line .what { flex: 1; min-width: 0; }
+.page > .spec { margin: 0 28px; }
+.total::after { display: none; }
+.total .text { font-weight: 600; }
+.checkout { display: flex; justify-content: center; padding-top: 28px; min-height: 52px; }
+
+.sheet-care { padding: 28px 28px 0; }
+.sheet-care .care { margin-top: 18px; }
+.sheet-care .care .text { font-size: 15px; line-height: 20px; margin: 0; }
