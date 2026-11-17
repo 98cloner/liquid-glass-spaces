@@ -344,7 +344,8 @@ export function forwardCapturedClick(e: React.MouseEvent<HTMLElement>, from: Ele
   const under = document.elementFromPoint(e.clientX, e.clientY);
   if (!under || !control.contains(under)) return false;
   e.stopPropagation(); e.preventDefault();
-  (control as HTMLElement).click();
+  const {ctrlKey, metaKey, shiftKey, altKey, button, clientX, clientY, screenX, screenY, detail} = e;
+  control.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, composed: true, view: window, ctrlKey, metaKey, shiftKey, altKey, button, clientX, clientY, screenX, screenY, detail}));
   return true;
 }
 

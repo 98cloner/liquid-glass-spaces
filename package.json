@@ -1,6 +1,6 @@
 {
   "name": "@robinwongm/liquid-glass",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Faithful Liquid Glass w/ WebGPU and HTML-in-Canvas.",
   "keywords": [
     "react",

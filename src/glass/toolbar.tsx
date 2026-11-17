@@ -244,7 +244,11 @@ const ITEM_PRESS = {bottom: itemPress(BOTTOM), top: itemPress(TOP)};
 
 type ItemProps = {icon?: string | ReactNode; children?: ReactNode; style?: CSSProperties; prominent?: boolean; tint?: GlassTint; disabled?: boolean;
   identifier?: string;
-  menu?: ReactNode; menuOpen?: boolean; onMenuOpenChange?: (open: boolean) => void; safeArea?: [number, number, number, number]};
+  menu?: ReactNode; menuOpen?: boolean; onMenuOpenChange?: (open: boolean) => void; safeArea?: [number, number, number, number];
+  /** A link: the item is an `<a href>` (SwiftUI's `Link` in a toolbar), so a modified click, a middle click and the context menu act as on any link. */
+  href?: string;
+  /** The link's target and rel (`href` only). */
+  target?: string; rel?: string};
 type ItemElementProps = ItemProps & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children' | 'style'> & {
   ref?: React.Ref<HTMLSpanElement>};
 
@@ -276,7 +280,7 @@ function MenuBarItem({menu, menuOpen, onMenuOpenChange, safeArea, ...item}: Item
   </>;
 }
 
-function BarItem({icon, children, style, prominent = false, tint, disabled = false, identifier, hostRef, ref: given, menu: _menu, menuOpen: _o, onMenuOpenChange: _c, safeArea: _s, ...rest}: ItemElementProps & {hostRef?: React.Ref<HTMLSpanElement>}) {
+function BarItem({icon, children, style, prominent = false, tint, disabled = false, identifier, href, target, rel, hostRef, ref: given, menu: _menu, menuOpen: _o, onMenuOpenChange: _c, safeArea: _s, ...rest}: ItemElementProps & {hostRef?: React.Ref<HTMLSpanElement>}) {
   const setRef = (el: HTMLSpanElement | null) => { for (const r of [hostRef, given]) { if (typeof r === 'function') r(el); else if (r) (r as {current: HTMLSpanElement | null}).current = el; } };
   const lone = useContext(Lone), bare = useContext(Bare), M = useContext(MetricsCtx), changed = useLayoutChanged(), dpr = typeof devicePixelRatio === 'number' ? devicePixelRatio : 3;
   const symbolic = icon != null && children == null;
@@ -301,14 +305,17 @@ function BarItem({icon, children, style, prominent = false, tint, disabled = fal
   </>;
   const tone = prominent ? null : disabled ? 'tertiary-label' : tint && !tint.startsWith('#') ? tint as SystemColor : bare ? 'label' : null;
   const press = usePressHighlight(M === TOP ? ITEM_PRESS.top : ITEM_PRESS.bottom);
-  const inBar = useContext(InToolbar), Part = inBar ? BaseToolbar.Button : BaseButton;
+  const inBar = useContext(InToolbar), link = href !== undefined;
+  const Part = (link ? (inBar ? BaseToolbar.Link : 'a') : inBar ? BaseToolbar.Button : BaseButton) as React.ElementType;
+  const kind = link ? {href, target, rel, ...(disabled ? {'aria-disabled': true, onClickCapture: (e: React.MouseEvent) => e.preventDefault()} : null)}
+    : {nativeButton: false, disabled, render: <span />};
   const itemId = identifier !== undefined ? `id:${identifier}` : typeof icon === 'string' ? `image:${icon}` : typeof children === 'string' && children ? `title:${children}` : undefined;
   const {onPointerDown: given_down, onClick, tabIndex, ...attrs} = rest;
   return (
-    <Part ref={setRef} nativeButton={false} data-lg-ring={M === TOP ? 'clipped' : ''} data-lg-item-id={itemId} disabled={disabled} {...attrs} {...(tabIndex !== undefined ? {tabIndex} : null)}
-      onPointerDown={(e) => { given_down?.(e as unknown as React.PointerEvent<HTMLSpanElement>); press(e as unknown as React.PointerEvent<HTMLSpanElement>); }}
-      onClick={(e) => onClick?.(e as unknown as React.MouseEvent<HTMLSpanElement>)}
-      render={<span />} style={{position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none', height: BAR.host, width, touchAction: 'none',
+    <Part ref={setRef} {...kind} data-lg-ring={M === TOP ? 'clipped' : ''} data-lg-item-id={itemId} {...attrs} {...(tabIndex !== undefined ? {tabIndex} : null)}
+      onPointerDown={(e: React.PointerEvent) => { given_down?.(e as unknown as React.PointerEvent<HTMLSpanElement>); press(e as unknown as React.PointerEvent<HTMLSpanElement>); }}
+      onClick={(e: React.MouseEvent) => onClick?.(e as unknown as React.MouseEvent<HTMLSpanElement>)}
+      style={{position: 'relative', display: 'flex', color: 'inherit', textDecoration: 'none', alignItems: 'center', justifyContent: 'center', flex: 'none', height: BAR.host, width, touchAction: 'none',
       fontSize: FONT, fontWeight: 400, lineHeight: `${lineHeight(FONT, dpr)}px`, whiteSpace: 'nowrap', userSelect: 'none',
       ...(M === TOP ? {'--lg-ring-top': '4px', '--lg-ring-bottom': '4px'} : null), ...style} as React.CSSProperties}>
       {

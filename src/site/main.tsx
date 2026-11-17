@@ -12,7 +12,9 @@ import {PhotosApp} from './apps/Photos';
 import {NotesApp} from './apps/Notes';
 import {ShopApp} from './apps/Shop';
 import '../showcase/showcase.css';
-import {Auto, ChevronLeft, ChevronRight, Close, Expand, Lens, Moon, Sun} from './apps/icons';
+import {Auto, ChevronLeft, ChevronRight, Close, Expand, GitHub, Lens, Moon, Sun} from './apps/icons';
+
+const REPO = 'https://github.com/robinWongM/liquid-glass';
 import './apps/apps.css';
 import './site.css';
 
@@ -114,7 +116,7 @@ function Hero({mode, choose, look, chooseLook}: {mode: Appearance; choose: (m: A
       {
 }
       <TopBar top={narrow ? 12 : 24} style={narrow ? undefined : {left: 48, right: 48}}>
-        <ToolbarGroup><ToolbarItem icon={mode === 'light' ? <Sun /> : mode === 'dark' ? <Moon /> : <Auto />} aria-label="Appearance" menu={<>
+        <ToolbarGroup><ToolbarItem icon={<GitHub />} aria-label="GitHub" href={REPO} /><ToolbarItem icon={mode === 'light' ? <Sun /> : mode === 'dark' ? <Moon /> : <Auto />} aria-label="Appearance" menu={<>
           <MenuSection title="Appearance">
             <MenuItem icon={<Sun size={22} />} checked={mode === 'light'} onSelect={() => choose('light')}>Light</MenuItem>
             <MenuItem icon={<Moon size={22} />} checked={mode === 'dark'} onSelect={() => choose('dark')}>Dark</MenuItem>

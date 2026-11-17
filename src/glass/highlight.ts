@@ -49,7 +49,8 @@ export function usePressHighlight(spec: PressHighlight, {targets, click = true, 
       stop();
       const hit = ev.type === 'pointerup' && spec.tracks(el, ev.clientX, ev.clientY);
       animate(false);
-      if (hit && click) el.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, clientX: ev.clientX, clientY: ev.clientY, detail: 1}));
+      const {ctrlKey, metaKey, shiftKey, altKey, button, screenX, screenY} = ev;
+      if (hit && click) el.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window, clientX: ev.clientX, clientY: ev.clientY, screenX, screenY, ctrlKey, metaKey, shiftKey, altKey, button, detail: 1}));
       if (click && ev.type === 'pointerup') {
         let timer = 0;
         const done = () => { clearTimeout(timer); removeEventListener('click', drop, true); };
