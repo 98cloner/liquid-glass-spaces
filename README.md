@@ -6,7 +6,10 @@ Faithful Liquid Glass w/ WebGPU and HTML-in-Canvas.
 
 ![](.github/media/hero.jpg)
 
-![](.github/media/components.jpg)
+![](.github/media/components-1.jpg)
+![](.github/media/components-2.jpg)
+![](.github/media/components-3.jpg)
+![](.github/media/components-4.jpg)
 
 ![](.github/media/showcase.jpg)
 
