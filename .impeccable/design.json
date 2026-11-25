@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T21:24:02.720+03:30",
+  "title": "Design System: Liquid Glass Spaces",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "System Blue",
+        "canonical": "#007aff",
+        "tonalRamp": ["#001d3d", "#00356f", "#004da5", "#0066d6", "#007aff", "#338fff", "#66aaff", "#99c5ff"]
+      },
+      "dark-primary": {
+        "role": "primary",
+        "displayName": "Dark System Blue",
+        "canonical": "#0a84ff",
+        "tonalRamp": ["#001a38", "#003166", "#004892", "#0066d6", "#0a84ff", "#3a9cff", "#70b4ff", "#a8d2ff"]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Pale System Gray",
+        "canonical": "#f2f2f7",
+        "tonalRamp": ["#1c1c1e", "#45454b", "#74747b", "#a2a2a9", "#c6c6cc", "#dcdae3", "#ececf2", "#f7f7fa"]
+      },
+      "neutral-surface": {
+        "role": "neutral",
+        "displayName": "White Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#202023", "#4a4a4d", "#77777b", "#a3a3a8", "#c3c3c7", "#dddddf", "#eeeeef", "#ffffff"]
+      },
+      "neutral-ink": {
+        "role": "neutral",
+        "displayName": "Black Ink",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#1c1c1c", "#3a3a3a", "#595959", "#777777", "#999999", "#bcbcbc", "#eeeeee"]
+      },
+      "dark-bg": {
+        "role": "neutral",
+        "displayName": "True Black",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#1a1a1a", "#353535", "#515151", "#707070", "#929292", "#b7b7b7", "#dedede"]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Graphite Surface",
+        "canonical": "#1c1c1e",
+        "tonalRamp": ["#09090a", "#151517", "#1c1c1e", "#353538", "#515154", "#747478", "#a1a1a5", "#d4d4d7"]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "White Ink",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#202023", "#49494c", "#77777a", "#a3a3a6", "#c4c4c6", "#dddddf", "#eeeeef", "#ffffff"]
+      },
+      "secondary-label": {
+        "role": "neutral",
+        "displayName": "Secondary Label",
+        "canonical": "rgba(60, 60, 67, 0.6)",
+        "tonalRamp": ["rgba(60, 60, 67, 0.12)", "rgba(60, 60, 67, 0.18)", "rgba(60, 60, 67, 0.24)", "rgba(60, 60, 67, 0.36)", "rgba(60, 60, 67, 0.6)", "rgba(60, 60, 67, 0.72)", "rgba(60, 60, 67, 0.86)", "rgba(60, 60, 67, 1)"]
+      },
+      "dark-secondary-label": {
+        "role": "neutral",
+        "displayName": "Dark Secondary Label",
+        "canonical": "rgba(235, 235, 245, 0.6)",
+        "tonalRamp": ["rgba(235, 235, 245, 0.12)", "rgba(235, 235, 245, 0.18)", "rgba(235, 235, 245, 0.24)", "rgba(235, 235, 245, 0.36)", "rgba(235, 235, 245, 0.6)", "rgba(235, 235, 245, 0.72)", "rgba(235, 235, 245, 0.86)", "rgba(235, 235, 245, 1)"]
+      },
+      "separator": {
+        "role": "neutral",
+        "displayName": "Separator",
+        "canonical": "rgba(60, 60, 67, 0.29)",
+        "tonalRamp": ["rgba(60, 60, 67, 0.08)", "rgba(60, 60, 67, 0.12)", "rgba(60, 60, 67, 0.18)", "rgba(60, 60, 67, 0.24)", "rgba(60, 60, 67, 0.29)", "rgba(60, 60, 67, 0.48)", "rgba(60, 60, 67, 0.72)", "rgba(60, 60, 67, 1)"]
+      },
+      "dark-separator": {
+        "role": "neutral",
+        "displayName": "Dark Separator",
+        "canonical": "rgba(84, 84, 88, 0.65)",
+        "tonalRamp": ["rgba(84, 84, 88, 0.12)", "rgba(84, 84, 88, 0.18)", "rgba(84, 84, 88, 0.24)", "rgba(84, 84, 88, 0.36)", "rgba(84, 84, 88, 0.65)", "rgba(84, 84, 88, 0.76)", "rgba(84, 84, 88, 0.88)", "rgba(84, 84, 88, 1)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Section and showcase titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Primary interface copy and navigation labels."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Cards, sheets, and page headings."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact controls and actions."
+      }
+    },
+    "shadows": [
+      {
+        "name": "device-frame",
+        "value": "0 24px 60px rgba(0, 0, 0, 0.35)",
+        "purpose": "Lifts a presented device from the stage."
+      },
+      {
+        "name": "device-shadow",
+        "value": "drop-shadow(0 18px 22px rgba(0, 0, 0, 0.14))",
+        "purpose": "Subtle product-scale depth for displayed hardware."
+      }
+    ],
+    "motion": [
+      {
+        "name": "lens-lift",
+        "value": "300ms response, 0.8 damping",
+        "purpose": "Lifts and settles a liquid lens on press or selection."
+      },
+      {
+        "name": "navigation",
+        "value": "416ms response",
+        "purpose": "Morphs navigation bars and page transitions."
+      },
+      {
+        "name": "spring-standard",
+        "value": "critically damped spring",
+        "purpose": "Moves structural state without overshoot."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop",
+        "value": "1240px"
+      },
+      {
+        "name": "compact",
+        "value": "759px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Glass",
+      "kind": "custom",
+      "description": "A refractive glass surface whose shape adapts to its backing content.",
+      "html": "<div class=\"ds-glass\">Glass</div>",
+      "css": ".ds-glass { display: inline-flex; align-items: center; justify-content: center; min-width: 96px; min-height: 44px; border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 22px; background: rgba(255, 255, 255, 0.24); color: #000; -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }"
+    },
+    {
+      "name": "GlassContainer",
+      "kind": "custom",
+      "description": "A container that merges neighboring glass members into a shared adaptive surface.",
+      "html": "<div class=\"ds-glass-container\"><span class=\"ds-glass-member\">One</span><span class=\"ds-glass-member\">Two</span></div>",
+      "css": ".ds-glass-container { display: inline-flex; gap: 8px; padding: 4px; border-radius: 999px; background: rgba(118, 118, 128, 0.12); } .ds-glass-member { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.72); color: #000; }"
+    },
+    {
+      "name": "Vibrant",
+      "kind": "custom",
+      "description": "Palette-toned text or icon ink that remains legible over variable glass backing.",
+      "html": "<span class=\"ds-vibrant\">Vibrant label</span>",
+      "css": ".ds-vibrant { display: inline-block; color: #007aff; font: 500 15px/1.25 -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A system control available in glass, prominent, or clear variants and automatic, capsule, rectangle, or circle shapes.",
+      "html": "<button class=\"ds-button\">Continue</button>",
+      "css": ".ds-button { min-height: 22px; padding: 7px 12px; border: 0; border-radius: 999px; background: #007aff; color: #fff; font: 400 17px/22px -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; cursor: pointer; } .ds-button:hover { background: #006ee6; } .ds-button:focus-visible { outline: 3px solid rgb(0 136 255 / 0.65); outline-offset: 2px; } .ds-button:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Toggle",
+      "kind": "custom",
+      "description": "A 63px by 28px switch whose thumb lifts into a liquid lens during manipulation.",
+      "html": "<button class=\"ds-toggle\" role=\"switch\" aria-checked=\"true\"><span></span></button>",
+      "css": ".ds-toggle { position: relative; width: 63px; height: 28px; padding: 0; border: 0; border-radius: 999px; background: #34c759; cursor: pointer; } .ds-toggle span { position: absolute; right: 2px; top: 2px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); } .ds-toggle:focus-visible { outline: 3px solid rgb(0 136 255 / 0.65); outline-offset: 3px; }"
+    },
+    {
+      "name": "Slider",
+      "kind": "custom",
+      "description": "A 6px track with a lifted 37px by 24px thumb, step snapping, ticks, and tintable fill.",
+      "html": "<div class=\"ds-slider\" role=\"slider\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"65\"><span></span></div>",
+      "css": ".ds-slider { position: relative; width: 260px; height: 31px; } .ds-slider::before { content: ''; position: absolute; left: 0; right: 0; top: 12.5px; height: 6px; border-radius: 999px; background: rgba(118, 118, 128, 0.12); } .ds-slider span { position: absolute; left: calc(65% - 18.5px); top: 3.5px; width: 37px; height: 24px; border-radius: 12px; background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }"
+    },
+    {
+      "name": "Picker",
+      "kind": "custom",
+      "description": "A selection control that presents options and a moving glass selection treatment.",
+      "html": "<div class=\"ds-picker\" role=\"radiogroup\"><button role=\"radio\" aria-checked=\"true\">Day</button><button role=\"radio\">Month</button></div>",
+      "css": ".ds-picker { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(118, 118, 128, 0.12); } .ds-picker button { min-height: 32px; padding: 0 14px; border: 0; border-radius: 999px; background: transparent; color: #000; } .ds-picker [aria-checked='true'] { background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }"
+    },
+    {
+      "name": "Toolbar",
+      "kind": "custom",
+      "description": "A morphing glass command bar composed from grouped toolbar items.",
+      "html": "<nav class=\"ds-toolbar\" aria-label=\"Toolbar\"><button>Back</button><button>Share</button></nav>",
+      "css": ".ds-toolbar { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 8px 12px; border: 1px solid rgba(255, 255, 255, 0.24); border-radius: 26px; background: rgba(255, 255, 255, 0.72); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); } .ds-toolbar button { min-height: 36px; border: 0; border-radius: 18px; background: transparent; color: #007aff; }"
+    },
+    {
+      "name": "TabView",
+      "kind": "nav",
+      "description": "A navigation view with glass tabs and spring-matched selection movement.",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"Tabs\"><button class=\"is-selected\">Browse</button><button>Saved</button><button>Profile</button></nav>",
+      "css": ".ds-tabs { display: flex; width: fit-content; height: 62px; align-items: center; gap: 2px; padding: 4px; border-radius: 62px; background: rgba(118, 118, 128, 0.12); } .ds-tabs button { min-width: 84px; height: 54px; border: 0; border-radius: 62px; background: transparent; color: #000; } .ds-tabs .is-selected { background: rgba(255, 255, 255, 0.84); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); }"
+    },
+    {
+      "name": "SearchBar",
+      "kind": "input",
+      "description": "A glass search field with native placeholder behavior and morphing presentation.",
+      "html": "<label class=\"ds-search\"><span aria-hidden=\"true\">⌕</span><input type=\"search\" placeholder=\"Search\"></label>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 8px; width: 260px; height: 44px; box-sizing: border-box; padding: 0 12px; border-radius: 999px; background: rgba(118, 118, 128, 0.12); } .ds-search:focus-within { outline: 3px solid rgb(0 136 255 / 0.65); outline-offset: 2px; } .ds-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: #000; font: 400 17px/22px -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; } .ds-search input::placeholder { color: rgba(60, 60, 67, 0.6); }"
+    },
+    {
+      "name": "Menu",
+      "kind": "custom",
+      "description": "A glass action menu with items, sections, dividers, and optional submenus.",
+      "html": "<div class=\"ds-menu\" role=\"menu\"><button role=\"menuitem\">New</button><hr><button role=\"menuitem\">Duplicate</button></div>",
+      "css": ".ds-menu { display: flex; flex-direction: column; width: 220px; padding: 8px; border-radius: 18px; background: rgba(255, 255, 255, 0.92); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18); } .ds-menu button { min-height: 40px; border: 0; border-radius: 12px; background: transparent; text-align: left; } .ds-menu button:hover { background: rgba(118, 118, 128, 0.12); } .ds-menu hr { width: 100%; border: 0; border-top: 1px solid rgba(60, 60, 67, 0.12); }"
+    },
+    {
+      "name": "ContextMenu",
+      "kind": "custom",
+      "description": "A context-triggered glass menu positioned around its source element.",
+      "html": "<div class=\"ds-context-menu\" role=\"menu\"><button role=\"menuitem\">Copy</button><button role=\"menuitem\">Delete</button></div>",
+      "css": ".ds-context-menu { display: flex; flex-direction: column; width: 180px; gap: 2px; padding: 8px; border-radius: 18px; background: rgba(255, 255, 255, 0.94); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18); } .ds-context-menu button { min-height: 40px; border: 0; border-radius: 12px; background: transparent; text-align: left; }"
+    },
+    {
+      "name": "EditMenu",
+      "kind": "custom",
+      "description": "An editing action menu for overflow and contextual text actions.",
+      "html": "<div class=\"ds-edit-menu\" role=\"menu\"><button>Cut</button><button>Copy</button><button>Paste</button></div>",
+      "css": ".ds-edit-menu { display: inline-flex; gap: 4px; padding: 6px; border-radius: 18px; background: rgba(255, 255, 255, 0.94); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18); } .ds-edit-menu button { min-height: 36px; border: 0; border-radius: 12px; background: transparent; }"
+    },
+    {
+      "name": "Sheet",
+      "kind": "custom",
+      "description": "A bottom glass sheet with large, medium, or fractional detents and drag dismissal.",
+      "html": "<section class=\"ds-sheet\"><div class=\"ds-sheet-indicator\"></div><h2>Sheet</h2></section>",
+      "css": ".ds-sheet { position: relative; box-sizing: border-box; min-height: 240px; padding: 28px; border-radius: 34px 34px 0 0; background: rgba(255, 255, 255, 0.94); box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.12); } .ds-sheet-indicator { width: 36px; height: 5px; margin: -10px auto 20px; border-radius: 999px; background: rgba(60, 60, 67, 0.3); } .ds-sheet h2 { margin: 0; font-size: 22px; line-height: 26px; }"
+    },
+    {
+      "name": "Alert",
+      "kind": "custom",
+      "description": "A modal alert with title, message, optional fields, and action buttons.",
+      "html": "<section class=\"ds-alert\" role=\"alertdialog\"><h2>Alert</h2><p>Choose an action.</p><button>OK</button></section>",
+      "css": ".ds-alert { width: 270px; box-sizing: border-box; padding: 18px 16px 12px; border-radius: 34px; background: rgba(255, 255, 255, 0.94); text-align: center; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18); } .ds-alert h2 { margin: 0 0 6px; font-size: 17px; } .ds-alert p { margin: 0 0 12px; color: rgba(60, 60, 67, 0.6); font-size: 15px; } .ds-alert button { width: 100%; min-height: 44px; border: 0; border-radius: 22px; background: rgba(118, 118, 128, 0.12); color: #007aff; }"
+    },
+    {
+      "name": "ConfirmationDialog",
+      "kind": "custom",
+      "description": "An anchored glass confirmation popover with title, message, cancel, and action choices.",
+      "html": "<section class=\"ds-confirmation\" role=\"dialog\"><h2>Confirm</h2><p>Continue with this action?</p><button>Cancel</button><button>Continue</button></section>",
+      "css": ".ds-confirmation { width: 240px; box-sizing: border-box; padding: 18px 16px 12px; border-radius: 34px; background: rgba(255, 255, 255, 0.94); text-align: center; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18); } .ds-confirmation h2 { margin: 0 0 6px; font-size: 17px; } .ds-confirmation p { margin: 0 0 12px; color: rgba(60, 60, 67, 0.6); font-size: 15px; } .ds-confirmation button { min-height: 40px; margin: 2px; border: 0; border-radius: 20px; background: rgba(118, 118, 128, 0.12); color: #007aff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Tactile OS",
+    "overview": "Liquid Glass Spaces translates the visual and behavioral language of a modern operating system into a refractive, touch-responsive surface system. The implementation feels optically physical rather than purely graphic: controls can become lenses when pressed, fills can swell or settle, and navigation moves through spatial continuity instead of abrupt page swaps.\n\nThe site balances Apple-like density with generous presentation. Light and dark schemes are complete, not inverted sketches. Neutral surfaces carry most of the interface, blue appears as the focused action and state color, and glass is reserved for spatial interaction rather than used as decoration on every panel.",
+    "keyCharacteristics": [
+      "Refractive glass with stable typography and direct touch affordances",
+      "Restrained light surfaces and true-black dark surfaces",
+      "Continuous, damped motion between states",
+      "System-like density on controls, generous rhythm on editorial sections"
+    ],
+    "rules": [
+      {
+        "name": "The Accent Rarity Rule",
+        "body": "Blue is for actionable, active, and state-bearing elements; it is not a decorative wash.",
+        "section": "colors"
+      },
+      {
+        "name": "The Native Rhythm Rule",
+        "body": "Use platform-native font names and negative tracking only for large display text; keep interface copy untracked and highly legible.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Rail Rule",
+        "body": "Editorial sections share the same content rail; a component demo may break containment only when it is demonstrating device or material scale.",
+        "section": "layout"
+      },
+      {
+        "name": "The State-Driven Lift Rule",
+        "body": "Elevation appears as a response to manipulation or focus, not as a default card ornament.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Soft-But-Defined Rule",
+        "body": "Corners are rounded enough to feel tactile, but borders and fill contrast remain restrained and precise.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep page backgrounds neutral and reserve blue for action-bearing states.",
+      "Do use SF Pro system font stacks before introducing a custom typeface.",
+      "Do use spring or damped motion for spatial state changes.",
+      "Do preserve complete light and dark palettes rather than relying on only a CSS filter.",
+      "Do use 26px card radius and capsule-shaped controls where they match the demonstrated components."
+    ],
+    "donts": [
+      "Don't add ambient shadows to every card or panel.",
+      "Don't use blue as a decorative background or oversized neutral fill.",
+      "Don't use hard page transitions where navigation can preserve spatial continuity.",
+      "Don't replace native system sizes with arbitrary global typography scales.",
+      "Don't use a decorative glass effect without a corresponding interactive or structural role."
+    ]
+  }
+}
